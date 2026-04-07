@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("DOM Cargado. Iniciando configuración...");
   setupTabs();
   setupChat();
+  setupChatToggle();
   setupLightbox();
 
   const sheetId = extractSheetId(GOOGLE_SHEET_URL);
@@ -82,6 +83,24 @@ function setupChat() {
       badge.innerHTML = '<span class="material-symbols-rounded" style="font-size: 14px; vertical-align: middle;">warning</span> ¡Mensaje sospechoso detectado!';
       msg.prepend(badge);
     }
+  });
+}
+
+function setupChatToggle() {
+  const minimizeBtn = document.getElementById('minimizeChat');
+  const launcher = document.getElementById('chatLauncher');
+  const chatWindow = document.querySelector('.chat-window');
+
+  if (!minimizeBtn || !launcher || !chatWindow) return;
+
+  minimizeBtn.addEventListener('click', () => {
+    chatWindow.classList.add('hidden');
+    launcher.classList.remove('hidden');
+  });
+
+  launcher.addEventListener('click', () => {
+    chatWindow.classList.remove('hidden');
+    launcher.classList.add('hidden');
   });
 }
 
