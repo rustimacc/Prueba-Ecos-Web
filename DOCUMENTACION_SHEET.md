@@ -2,9 +2,6 @@
 
 Esta documentación explica cómo configurar la hoja de Google Sheets vinculada al prototipo para que los cambios se reflejen correctamente en la web.
 
-## 🔗 Configuración del Enlace
-Asegúrate de que la hoja de cálculo de Google Sheets sea **pública** (Compartir -> "Cualquier persona con el enlace"). El enlace configurado actualmente en `app.js` es:
-`https://docs.google.com/spreadsheets/d/1C7FpPMlIsT3CabkTUC56-4Vl_6e2qqXIOfN4INqWJLc/edit?usp=sharing`
 
 ---
 
