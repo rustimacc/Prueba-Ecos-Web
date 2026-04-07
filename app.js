@@ -91,17 +91,27 @@ function setupChatToggle() {
   const launcher = document.getElementById('chatLauncher');
   const chatWindow = document.querySelector('.chat-window');
 
-  if (!minimizeBtn || !launcher || !chatWindow) return;
+  console.log("Configurando toggle del chat...", { minimizeBtn, launcher, chatWindow });
 
-  minimizeBtn.addEventListener('click', () => {
+  if (!minimizeBtn || !launcher || !chatWindow) {
+    console.error("No se encontraron los elementos necesarios para el toggle del chat.");
+    return;
+  }
+
+  // Usamos onclick para mayor seguridad en entornos variables
+  minimizeBtn.onclick = (e) => {
+    e.preventDefault();
+    console.log("Minimizando chat...");
     chatWindow.classList.add('hidden');
     launcher.classList.remove('hidden');
-  });
+  };
 
-  launcher.addEventListener('click', () => {
+  launcher.onclick = (e) => {
+    e.preventDefault();
+    console.log("Mostrando chat...");
     chatWindow.classList.remove('hidden');
     launcher.classList.add('hidden');
-  });
+  };
 }
 
 // ==========================================

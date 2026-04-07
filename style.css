@@ -27,13 +27,14 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito', sans-serif;
+  /* Eliminamos el font-family de aquí para que no sobrescriba los iconos */
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-main);
   line-height: 1.6;
+  font-family: 'Nunito', sans-serif; /* Lo movemos al body */
 }
 
 /* Layout */
@@ -364,7 +365,7 @@ body {
 }
 
 .chat-minimize-btn {
-  background: none;
+  background: transparent;
   border: none;
   color: white;
   cursor: pointer;
@@ -372,12 +373,19 @@ body {
   align-items: center;
   justify-content: center;
   margin-left: auto;
-  opacity: 0.7;
-  transition: opacity 0.2s;
+  opacity: 0.8;
+  transition: all 0.2s;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 0;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .chat-minimize-btn:hover {
   opacity: 1;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .chat-header .avatar {
@@ -613,7 +621,19 @@ body {
 
 /* Utility icons (Material symbols from Google Fonts in index.html) */
 .material-symbols-rounded {
+  font-family: 'Material Symbols Rounded' !important;
   font-variation-settings: 'FILL' 1;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Chat Launcher */
